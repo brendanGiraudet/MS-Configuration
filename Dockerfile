@@ -5,16 +5,21 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+USER app
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG configuration=Release
 WORKDIR /src
 COPY . .
-RUN dotnet restore "./ms-configuration/ms-configuration.csproj"
+WORKDIR /src/ms-configuration
+RUN dotnet restore
+RUN dotnet build -c $configuration -o /app/build
 
-RUN dotnet build "./ms-configuration/ms-configuration.csproj" -c Release -o /app/build
+#WORKDIR /src/test-folder
+#RUN dotnet test --no-restore --verbosity normal
 
 FROM build AS publish
-WORKDIR /src
-RUN dotnet publish "./ms-configuration/ms-configuration.csproj" -c Release -o /app/publish /p:UseAppHost=false
+ARG configuration=Release
+RUN dotnet publish -c $configuration -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

@@ -11,7 +11,7 @@ using ms_configuration.Data;
 namespace ms_configuration.Migrations
 {
     [DbContext(typeof(ConfigurationDatabaseContext))]
-    [Migration("20240909104325_InitialDbCreation")]
+    [Migration("20240909133657_InitialDbCreation")]
     partial class InitialDbCreation
     {
         /// <inheritdoc />
@@ -65,7 +65,7 @@ namespace ms_configuration.Migrations
 
                     b.HasIndex("RabbitMqConfigModelId");
 
-                    b.ToTable("RabbitMqExchange");
+                    b.ToTable("RabbitMqExchanges");
                 });
 
             modelBuilder.Entity("ms_configuration.Models.RabbitMqExchangeModel", b =>

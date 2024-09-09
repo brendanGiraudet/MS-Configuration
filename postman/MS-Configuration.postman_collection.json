@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "0da4ed8e-9db5-4039-960b-98de6f83e7af",
+		"name": "MS-Configuration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23806707",
+		"_collection_link": "https://bakayaru.postman.co/workspace/Team-Workspace~541a9c44-c0ea-4244-8532-846acb88cbb2/collection/23806707-0da4ed8e-9db5-4039-960b-98de6f83e7af?action=share&source=collection_link&creator=23806707"
+	},
+	"item": [
+		{
+			"name": "/odata/RabbitMqConfigs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/odata/RabbitMqConfigs?$top=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"odata",
+						"RabbitMqConfigs"
+					],
+					"query": [
+						{
+							"key": "$top",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/odata/RabbitMqConfigs Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hostname\" : \"hostname\",\r\n    \"port\":10,\r\n    \"username\": \"username\",\r\n    \"password\": \"password\",\r\n    \"rabbitMqExchanges\" : [\r\n        {\r\n            \"exchange\": \"exchange\",\r\n            \"queue\": \"queue\",\r\n            \"routingKey\": \"routingKey\"\r\n        },\r\n        {\r\n            \"exchange\": \"exchange\",\r\n            \"queue\": \"queue2\",\r\n            \"routingKey\": \"routingKey\"\r\n        }\r\n    ]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/odata/RabbitMqConfigs",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"odata",
+						"RabbitMqConfigs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

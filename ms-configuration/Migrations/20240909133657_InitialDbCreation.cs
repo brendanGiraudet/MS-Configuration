@@ -27,7 +27,7 @@ namespace ms_configuration.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "RabbitMqExchange",
+                name: "RabbitMqExchanges",
                 columns: table => new
                 {
                     Exchange = table.Column<string>(type: "TEXT", nullable: false),
@@ -37,9 +37,9 @@ namespace ms_configuration.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RabbitMqExchange", x => new { x.Exchange, x.Queue });
+                    table.PrimaryKey("PK_RabbitMqExchanges", x => new { x.Exchange, x.Queue });
                     table.ForeignKey(
-                        name: "FK_RabbitMqExchange_RabbitMqConfigs_RabbitMqConfigModelId",
+                        name: "FK_RabbitMqExchanges_RabbitMqConfigs_RabbitMqConfigModelId",
                         column: x => x.RabbitMqConfigModelId,
                         principalTable: "RabbitMqConfigs",
                         principalColumn: "Id",
@@ -47,8 +47,8 @@ namespace ms_configuration.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_RabbitMqExchange_RabbitMqConfigModelId",
-                table: "RabbitMqExchange",
+                name: "IX_RabbitMqExchanges_RabbitMqConfigModelId",
+                table: "RabbitMqExchanges",
                 column: "RabbitMqConfigModelId");
         }
 
@@ -56,7 +56,7 @@ namespace ms_configuration.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "RabbitMqExchange");
+                name: "RabbitMqExchanges");
 
             migrationBuilder.DropTable(
                 name: "RabbitMqConfigs");

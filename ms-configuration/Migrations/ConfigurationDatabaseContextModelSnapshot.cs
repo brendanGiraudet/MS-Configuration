@@ -62,7 +62,7 @@ namespace ms_configuration.Migrations
 
                     b.HasIndex("RabbitMqConfigModelId");
 
-                    b.ToTable("RabbitMqExchange");
+                    b.ToTable("RabbitMqExchanges");
                 });
 
             modelBuilder.Entity("ms_configuration.Models.RabbitMqExchangeModel", b =>

@@ -11,14 +11,12 @@ public class RabbitMqConfigsController(ConfigurationDatabaseContext context) : O
 {
     private readonly ConfigurationDatabaseContext _context = context;
 
-    [HttpGet]
     [EnableQuery]
     public IActionResult Get()
     {
         return Ok(_context.RabbitMqConfigs);
     }
 
-    [HttpGet("({key})")]
     [EnableQuery]
     public IActionResult Get([FromODataUri] Guid key)
     {
