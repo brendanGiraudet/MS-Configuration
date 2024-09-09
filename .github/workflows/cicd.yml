@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build Docker image
-      working-directory: /home/runner/work/ms-configuration
+      working-directory: /home/runner/work/MS-Configuration/MS-Configuration
       run: docker build -t $DockerImageName .
 
     - name: Login to Docker Hub
