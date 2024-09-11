@@ -28,7 +28,7 @@
 Clonez ce dépôt et accédez au répertoire du projet :
 
 ```bash
-git clone https://github.com/votre-utilisateur/ms-configuration.git
+git clone https://github.com/brendanGiraudet/ms-configuration.git
 cd ms-configuration
 ```
 
@@ -53,7 +53,7 @@ Copier le code
 dotnet run
 ```
 
-Le microservice sera disponible à l'adresse http://localhost:5000.
+Le microservice sera disponible à l'adresse http://localhost:5000 (port specifié dans le fichier appsettings).
 
 3. Utiliser Docker
 Construire l'Image Docker et/ou l'éxécuter
@@ -64,7 +64,7 @@ Copier le code
 docker compose -f .\docker-compose-debug.yml up
 ```
 
-Le service sera disponible à http://localhost:1717.
+Le service sera disponible à http://localhost:1717 (port specifié dans le fichier docker-compose-debug).
 
 ## Utilisation
 Points de Terminaison OData
