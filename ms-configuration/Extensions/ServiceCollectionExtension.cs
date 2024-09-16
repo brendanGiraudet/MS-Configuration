@@ -21,6 +21,7 @@ public static class ServiceCollectionExtension
     {
         var modelBuilder = new ODataConventionModelBuilder();
         modelBuilder.EntitySet<RabbitMqConfigModel>("RabbitMqConfigs");
+        modelBuilder.EntitySet<RabbitMqRoutingKeyModel>("RabbitMqRoutingKeys");
 
         services.AddControllers()
             .AddOData(

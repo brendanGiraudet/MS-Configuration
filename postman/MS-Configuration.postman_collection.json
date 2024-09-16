@@ -8,55 +8,116 @@
 	},
 	"item": [
 		{
-			"name": "/odata/RabbitMqConfigs",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/odata/RabbitMqConfigs?$top=2",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"odata",
-						"RabbitMqConfigs"
-					],
-					"query": [
-						{
-							"key": "$top",
-							"value": "2"
+			"name": "RabbitMqConfigs",
+			"item": [
+				{
+					"name": "/odata/RabbitMqConfigs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/odata/RabbitMqConfigs?$top=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"odata",
+								"RabbitMqConfigs"
+							],
+							"query": [
+								{
+									"key": "$top",
+									"value": "2"
+								}
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "/odata/RabbitMqConfigs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hostname\" : \"hostname\",\r\n    \"port\":10,\r\n    \"username\": \"username\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/odata/RabbitMqConfigs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"odata",
+								"RabbitMqConfigs"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "/odata/RabbitMqConfigs Copy",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"hostname\" : \"hostname\",\r\n    \"port\":10,\r\n    \"username\": \"username\",\r\n    \"password\": \"password\",\r\n    \"rabbitMqExchanges\" : [\r\n        {\r\n            \"exchange\": \"exchange\",\r\n            \"queue\": \"queue\",\r\n            \"routingKey\": \"routingKey\"\r\n        },\r\n        {\r\n            \"exchange\": \"exchange\",\r\n            \"queue\": \"queue2\",\r\n            \"routingKey\": \"routingKey\"\r\n        }\r\n    ]\r\n\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "RabbitMqRoutingKeys",
+			"item": [
+				{
+					"name": "/odata/RabbitMqRoutingKeys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/odata/RabbitMqRoutingKeys?$top=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"odata",
+								"RabbitMqRoutingKeys"
+							],
+							"query": [
+								{
+									"key": "$top",
+									"value": "2"
+								}
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{url}}/odata/RabbitMqConfigs",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"odata",
-						"RabbitMqConfigs"
-					]
+				{
+					"name": "RabbitMqRoutingKeys",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Exchange\": \"recip\",\r\n    \"Queue\": \"ms-recip\",\r\n    \"RoutingKey\": \"CreatedRecip\",\r\n    \"ActionName\": \"CreatedRecip\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/odata/RabbitMqRoutingKeys",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"odata",
+								"RabbitMqRoutingKeys"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }

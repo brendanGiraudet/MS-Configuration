@@ -11,4 +11,5 @@ public class ConfigurationDatabaseContext : DbContext
     }
 
     public DbSet<RabbitMqConfigModel> RabbitMqConfigs { get; set; }
+    public DbSet<RabbitMqRoutingKeyModel> RabbitMqRoutingKeys { get; set; }
 }
